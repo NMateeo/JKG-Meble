@@ -54,8 +54,10 @@ body {
   z-index: 500;
 }
 
-.navbar-mobile {
+.navbar {
   position: absolute;
+}
+.navbar-mobile {
   top: 0;
   left: 0;
   right: 0;
@@ -137,52 +139,47 @@ body {
 .page {
   display: flex;
   position: relative;
-  justify-content: flex-start;
-  margin-left: 3rem;
-  margin-bottom: 2rem;
-  margin-top: 3rem;
-  font-size: 2rem;
+  margin: 0 3em 3em 3em;
+  font-size: 2.5rem;
   letter-spacing: 1.5px;
   text-transform: capitalize;
 }
 .page__title {
-  margin-left: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 0.5em;
 }
-.page::before {
+.page__title::before {
   position: absolute;
   content: "";
-  top: 0;
-  height: 100%;
-  width: 0.15rem;
+  top: 1.8em;
+  height: 0.4rem;
+  width: 16rem;
   background-color: black;
 }
 
 .textile {
   position: relative;
-  width: 100%;
 }
 .textile-item {
   display: flex;
-  width: 100%;
-  height: 100%;
-  flex-direction: row;
 }
 .textile-item-box {
   display: flex;
   flex-direction: column;
+  padding: 0 1rem;
 }
 .textile-item-box__img {
   display: flex;
   align-items: center;
   position: relative;
-  width: 100%;
-  height: 100%;
 }
 .textile-item-box__img-picture {
   position: relative;
   width: 100%;
-  height: 80%;
-  padding: 1.5rem;
+  height: 100%;
   background-size: cover;
   background-position: center;
   border-radius: 10px;
@@ -191,15 +188,12 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
+  flex-direction: column;
+  gap: 2em;
   padding: 1rem;
-  margin-top: 8rem;
 }
 .textile-item-box__text-title {
-  position: absolute;
   text-align: center;
-  width: 100%;
-  top: -10rem;
   font-size: 2.6rem;
   letter-spacing: 1px;
   text-shadow: 1px 2px 2px rgba(43, 43, 43, 0.3);
@@ -216,12 +210,67 @@ body {
   background-color: white;
 }
 
-.reviews__box {
-  position: relative;
+.contact__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.contact__container .box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1.5rem;
+  height: 20rem;
+  width: 33rem;
+  margin-bottom: 4rem;
+  overflow: hidden;
+  text-align: left;
+}
+.contact__container .box h3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  letter-spacing: 0.1rem;
+  gap: 1rem;
+}
+.contact__container .box h3 img {
+  scale: 0.7;
+}
+.contact__container .box p {
+  font-family: sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.contact__container .box .bold {
+  font-weight: bold;
+}
+.contact__container-adress {
+  box-shadow: 0px 0px 12px -6px rgb(0, 0, 0);
+  margin-bottom: 1em;
+}
+.contact__container-phone {
+  box-shadow: 0px 0px 12px -6px rgb(0, 0, 0);
+}
+.contact .maps {
+  display: flex;
+  justify-content: center;
   margin: 2rem;
-  padding: 2rem;
-  border-radius: 9px;
-  box-shadow: 3px 3px 3px rgb(30, 30, 30);
+  overflow: hidden;
+}
+.contact .maps-center {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.contact__form {
+  display: flex;
+  justify-content: center;
 }
 
 @media (min-width: 768px) {
@@ -388,6 +437,7 @@ body {
     display: flex;
     flex-direction: row;
     margin: 20rem 0;
+    align-items: center;
   }
   .textile-item-box__img {
     display: flex;
@@ -408,10 +458,10 @@ body {
     z-index: 0;
   }
   .textile-item-box__text {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin-top: 0;
     width: 100%;
     height: 100%;
@@ -419,22 +469,23 @@ body {
   }
   .textile-item-box__text-title {
     position: absolute;
+    top: 0.15em;
+    left: 3em;
     text-align: left;
-    top: 4rem;
-    left: 2rem;
     font-size: 2.6rem;
     letter-spacing: 1px;
     text-shadow: 1px 2px 2px rgba(43, 43, 43, 0.3);
-    width: 100%;
     font-weight: bold;
+    color: #000;
+    z-index: 10;
   }
   .textile-item-box__text-size {
     display: flex;
     position: relative;
     align-items: center;
     text-align: left;
-    padding-left: 2rem;
-    height: 60%;
+    padding: 0 2em;
+    height: 20rem;
     font-size: 1.8rem;
     border-radius: 10px;
     background-color: white;
