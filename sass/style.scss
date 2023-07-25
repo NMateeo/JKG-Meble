@@ -30,7 +30,7 @@ body {
 
 .logo {
 	position: relative;
-	background-color: black;
+	background-color: $darker;
 	height: 6rem;
 	width: 100%;
 	overflow: hidden;
@@ -96,9 +96,6 @@ body {
 			text-decoration: none;
 			transition: color 0.3s;
 
-			&:hover {
-				color: $mainColor;
-			}
 		}
 	}
 }
@@ -113,7 +110,6 @@ body {
 	display: flex;
 	flex-direction: column;
 	position: relative;
-	width: 100%;
 
 	&-box {
 		position: relative;
@@ -162,7 +158,7 @@ body {
 .page {
 	display: flex;
 	position: relative;
-	margin: 0 3em 3em 3em;
+	margin: 3rem 0 0;
 	font-size: 2.5rem;
 	letter-spacing: 1.5px;
 	text-transform: capitalize;
@@ -218,7 +214,7 @@ body {
 				justify-content: center;
 				align-items: center;
 				flex-direction: column;
-				gap: 2em;
+				gap: 2rem;
 				padding: 1rem;
 
 				&-title {
@@ -244,88 +240,235 @@ body {
 	}
 }
 
-
 // CONTACT
 
 .contact {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+
+	.form-wrapper {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
 	&__container {
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		flex-direction: column;
-
-		.box {
+		flex-wrap: wrap;
+		gap: 3rem;
+		&-contactBox {
 			display: flex;
-			justify-content: center;
-			align-items: center;
 			flex-direction: column;
-			gap: 1.5rem;
-			height: 20rem;
-			width: 33rem;
-			margin-bottom: 4rem;
-			overflow: hidden;
-			text-align: left;
-			
-			h3 {
+			gap: 1.5em;
+			.box {
 				display: flex;
 				justify-content: center;
 				align-items: center;
-				letter-spacing: .1rem;
-				gap: 1rem;
+				flex-direction: column;
+				gap: 1.5rem;
+				height: 20rem;
+				width: 33rem;
+				border-radius: 8px;
+				overflow: hidden;
+				// text-align: left;
 
-				img {
-					scale: 0.7;
+				h3 {
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					letter-spacing: 0.1rem;
+					gap: 1rem;
+
+					img {
+						scale: 0.7;
+					}
+				}
+
+				p {
+					font-family: sans-serif;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+				}
+				.bold {
+					font-weight: bold;
 				}
 			}
-			
-			p {	
-				font-family: sans-serif;
+
+			&-adress {
+				box-shadow: 0px 0px 20px -15px rgba(126, 126, 150, 1);
+
+				margin-bottom: 1em;
+			}
+			&-phone {
+				box-shadow: 0px 0px 20px -15px rgba(126, 126, 150, 1);
+			}
+		}
+		.maps {
+			display: flex;
+			justify-content: center;
+			margin: 2rem;
+			overflow: hidden;
+
+			&-center {
 				display: flex;
+				width: 100%;
 				justify-content: center;
 				align-items: center;
-
+				border-radius: 8px;
+				overflow: hidden;
 			}
-			.bold {
-				font-weight: bold;
-			}
-		}
-
-		&-adress {
-			box-shadow: 0px -0px 12px -6px rgba(0, 0, 0, 1);
-			margin-bottom: 1em;
-		}
-		&-phone {
-			box-shadow: 0px -0px 12px -6px rgba(0, 0, 0, 1);
-		}
-
-	}
-	.maps {
-		display: flex;
-		justify-content: center;
-		margin: 2rem;
-		overflow: hidden;
-		
-		&-center {
-			display: flex;
-			width: 100%;
-			justify-content: center;
-			align-items: center;
-			border-radius: 8px;
-			overflow: hidden;
 		}
 	}
 
 	&__form {
-		display: flex;
-		justify-content: center;
+		width: 65rem;
+		padding: 0 2rem;
+		h2 {
+			padding: 1.5rem 0;
+			font-size: 3rem;
+			text-transform: uppercase;
+			text-align: center;
+		}
+
+		label {
+			font-size: 2.2rem;
+			margin-bottom: 0.2rem;
+		}
+
+		.text,
+		.textarea {
+			padding: 0.7rem;
+			margin: 1rem 0;
+			font-size: 2rem;
+		}
+
+		.textarea {
+			resize: vertical;
+			height: 10rem;
+		}
+
+		&-box {
+			display: flex;
+			flex-direction: column;
+			margin: 2rem 0;
+
+			.errorMail {
+				visibility: hidden;
+				color: #ea4335;
+			}
+
+			.errorArea {
+				visibility: hidden;
+				color: #ea4335;
+			}
+		}
+
+		&-btnBox {
+			text-align: center;
+			margin-bottom: 2rem;
+			button {
+				border: 1.5px solid $darker;
+				border-radius: 5px;
+				padding: 1.1rem 2.8rem;
+				background: none;
+				font-size: 1.6rem;
+				text-transform: uppercase;
+				cursor: pointer;
+				transition: scale 0.3s;
+
+				&:hover {
+					scale: 1.1;
+				}
+			}
+		}
 	}
 }
 
+// FOOTER 
 
+.footer {
+	margin-top: 5rem;
+	background-color: #f6f6f6;
+}
 
+.box {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
 
+	&-logo {
+		overflow: hidden;
+		width: 100%;
 
-// MEDIA //
+		&__img {
+			width: 100%;
+			height: 8rem;
+			background-position: center;
+			background-size: cover;
+		}
+	}
+
+	&-links {
+		display: flex;
+		flex-direction: column;
+		text-align: center;
+		margin: 3rem 0;
+
+		&__title {
+			margin-bottom: 2rem;
+			font-size: 2.3rem;
+		}
+
+		&__style {
+			margin: 1rem 0;
+			text-decoration: none;
+			text-transform: capitalize;
+			color: $darker;
+		}
+
+		&__allegro {
+			color: rgb(255, 164, 37);
+		}
+	}
+}
+
+.implementation {
+	position: absolute;
+	width: 100%;
+	left: 0;
+	text-align: center;
+	padding: 3rem 0;
+	font-family: sans-serif;
+	background-color: #f6f6f6;
+	color: $darker;
+	letter-spacing: 1px;
+	
+	&::before {
+		position: absolute;
+		content: '';
+		background-color: black;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 1.5px;
+		z-index: 1;
+	}
+}
+
+.madeby {
+	font-weight: bold;
+	color: rgb(176, 73, 255);
+
+}
+
+// MEDIA 768//
 
 @media (min-width: 768px) {
 	.logo {
@@ -408,6 +551,7 @@ body {
 		}
 	}
 }
+
 
 @media (min-width: 1000px) {
 	.main {
@@ -512,7 +656,7 @@ body {
 			&-box {
 				display: flex;
 				flex-direction: row;
-				margin: 20rem 0;
+				margin: 15rem 0;
 				align-items: center;
 
 				&__img {

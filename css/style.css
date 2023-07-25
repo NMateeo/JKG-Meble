@@ -24,7 +24,7 @@ body {
 
 .logo {
   position: relative;
-  background-color: black;
+  background-color: rgb(30, 30, 30);
   height: 6rem;
   width: 100%;
   overflow: hidden;
@@ -85,9 +85,6 @@ body {
   text-decoration: none;
   transition: color 0.3s;
 }
-.navbar-mobile__link:hover {
-  color: rgb(104, 190, 255);
-}
 
 .navbar-desktop {
   display: none;
@@ -97,7 +94,6 @@ body {
   display: flex;
   flex-direction: column;
   position: relative;
-  width: 100%;
 }
 .main-box {
   position: relative;
@@ -139,7 +135,7 @@ body {
 .page {
   display: flex;
   position: relative;
-  margin: 0 3em 3em 3em;
+  margin: 3rem 0 0;
   font-size: 2.5rem;
   letter-spacing: 1.5px;
   text-transform: capitalize;
@@ -189,7 +185,7 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  gap: 2em;
+  gap: 2rem;
   padding: 1rem;
 }
 .textile-item-box__text-title {
@@ -210,13 +206,30 @@ body {
   background-color: white;
 }
 
-.contact__container {
+.contact {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
-.contact__container .box {
+.contact .form-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.contact__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 3rem;
+}
+.contact__container-contactBox {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+}
+.contact__container-contactBox .box {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -224,43 +237,42 @@ body {
   gap: 1.5rem;
   height: 20rem;
   width: 33rem;
-  margin-bottom: 4rem;
+  border-radius: 8px;
   overflow: hidden;
-  text-align: left;
 }
-.contact__container .box h3 {
+.contact__container-contactBox .box h3 {
   display: flex;
   justify-content: center;
   align-items: center;
   letter-spacing: 0.1rem;
   gap: 1rem;
 }
-.contact__container .box h3 img {
+.contact__container-contactBox .box h3 img {
   scale: 0.7;
 }
-.contact__container .box p {
+.contact__container-contactBox .box p {
   font-family: sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.contact__container .box .bold {
+.contact__container-contactBox .box .bold {
   font-weight: bold;
 }
-.contact__container-adress {
-  box-shadow: 0px 0px 12px -6px rgb(0, 0, 0);
+.contact__container-contactBox-adress {
+  box-shadow: 0px 0px 20px -15px rgb(126, 126, 150);
   margin-bottom: 1em;
 }
-.contact__container-phone {
-  box-shadow: 0px 0px 12px -6px rgb(0, 0, 0);
+.contact__container-contactBox-phone {
+  box-shadow: 0px 0px 20px -15px rgb(126, 126, 150);
 }
-.contact .maps {
+.contact__container .maps {
   display: flex;
   justify-content: center;
   margin: 2rem;
   overflow: hidden;
 }
-.contact .maps-center {
+.contact__container .maps-center {
   display: flex;
   width: 100%;
   justify-content: center;
@@ -269,8 +281,127 @@ body {
   overflow: hidden;
 }
 .contact__form {
+  width: 65rem;
+  padding: 0 2rem;
+}
+.contact__form h2 {
+  padding: 1.5rem 0;
+  font-size: 3rem;
+  text-transform: uppercase;
+  text-align: center;
+}
+.contact__form label {
+  font-size: 2.2rem;
+  margin-bottom: 0.2rem;
+}
+.contact__form .text,
+.contact__form .textarea {
+  padding: 0.7rem;
+  margin: 1rem 0;
+  font-size: 2rem;
+}
+.contact__form .textarea {
+  resize: vertical;
+  height: 10rem;
+}
+.contact__form-box {
+  display: flex;
+  flex-direction: column;
+  margin: 2rem 0;
+}
+.contact__form-box .errorMail {
+  visibility: hidden;
+  color: #ea4335;
+}
+.contact__form-box .errorArea {
+  visibility: hidden;
+  color: #ea4335;
+}
+.contact__form-btnBox {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.contact__form-btnBox button {
+  border: 1.5px solid rgb(30, 30, 30);
+  border-radius: 5px;
+  padding: 1.1rem 2.8rem;
+  background: none;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: scale 0.3s;
+}
+.contact__form-btnBox button:hover {
+  scale: 1.1;
+}
+
+.footer {
+  margin-top: 5rem;
+  background-color: #f6f6f6;
+}
+
+.box {
+  position: relative;
   display: flex;
   justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.box-logo {
+  overflow: hidden;
+  width: 100%;
+}
+.box-logo__img {
+  width: 100%;
+  height: 8rem;
+  background-position: center;
+  background-size: cover;
+}
+.box-links {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin: 3rem 0;
+}
+.box-links__title {
+  margin-bottom: 2rem;
+  font-size: 2.3rem;
+}
+.box-links__style {
+  margin: 1rem 0;
+  text-decoration: none;
+  text-transform: capitalize;
+  color: rgb(30, 30, 30);
+}
+.box-links__allegro {
+  color: rgb(255, 164, 37);
+}
+
+.implementation {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  text-align: center;
+  padding: 3rem 0;
+  font-family: sans-serif;
+  background-color: #f6f6f6;
+  color: rgb(30, 30, 30);
+  letter-spacing: 1px;
+}
+.implementation::before {
+  position: absolute;
+  content: "";
+  background-color: black;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1.5px;
+  z-index: 1;
+}
+
+.madeby {
+  font-weight: bold;
+  color: rgb(176, 73, 255);
 }
 
 @media (min-width: 768px) {
@@ -436,7 +567,7 @@ body {
   .textile-item-box {
     display: flex;
     flex-direction: row;
-    margin: 20rem 0;
+    margin: 15rem 0;
     align-items: center;
   }
   .textile-item-box__img {
