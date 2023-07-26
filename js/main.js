@@ -5,7 +5,8 @@ const errorArea = document.querySelector(".errorArea")
 const email = document.querySelector(".text")
 const formBtn = document.querySelector(".contact__form-btnBox")
 const textarea = document.querySelector(".textarea")
-const footerYear = document.querySelector('.footeryear');
+const footerYear = document.querySelector(".footeryear")
+const allLinks = document.querySelectorAll(".navbar-mobile__link")
 
 const formFunction = () => {
 	checkMail()
@@ -39,6 +40,20 @@ const checkMail = () => {
 const handleNav = () => {
 	navBtn.classList.toggle("is-active")
 	navMobile.classList.toggle("navbar-mobile--active")
+
+	if (navMobile.classList.contains("navbar-mobile--active")) {
+		document.getElementsByTagName("body")[0].style.overflow = "hidden"
+	} else {
+		document.getElementsByTagName("body")[0].style.overflow = "visible"
+	}
+
+	allLinks.forEach(links =>
+		links.addEventListener("click", () => {
+			navBtn.classList.remove("is-active")
+			navMobile.classList.remove("navbar-mobile--active")
+			document.getElementsByTagName("body")[0].style.overflow = "visible"
+		})
+	)
 }
 
 const handleCurrentYear = () => {
@@ -49,5 +64,3 @@ const handleCurrentYear = () => {
 formBtn.addEventListener("click", formFunction)
 navBtn.addEventListener("click", handleNav)
 handleCurrentYear()
-
-// document.getElementsByTagName(handleNav)[0].style.overflow = 'hidden';

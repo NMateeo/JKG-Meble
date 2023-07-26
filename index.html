@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pl">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -24,17 +25,17 @@
     </div>
     <div class="wrapper">
         <nav class="navbar navbar-mobile">
-            <a class="navbar-mobile__link" href="#furniture">nasze meble</a>
-            <a class="navbar-mobile__link" href="about-company">o firmie</a>
-            <a class="navbar-mobile__link" href="contact">kontakt</a>
+            <a class="navbar-mobile__link" href="./subwebsites/offers.html">nasze meble</a>
+            <a class="navbar-mobile__link" href="#about-company">o firmie</a>
+            <a class="navbar-mobile__link" href="#contact">kontakt</a>
         </nav>
     </div>
     <nav class="navbar-desktop">
         <div class="wrapper">
             <a href="" class="navbar-desktop__jkg">JKG Meble</a>
             <div class="navbar-desktop__links">
-                <a href="furniture" class="navbar-desktop__link animation">nasze meble</a>
-                <a href="about-company" class="navbar-desktop__link  animation">o firmie</a>
+                <a href="./subwebsites/offers.html" class="navbar-desktop__link animation">nasze meble</a>
+                <a href="#about-company" class="navbar-desktop__link  animation">o firmie</a>
                 <a href="#contact" class="navbar-desktop__link  animation">kontakt</a>
             </div>
         </div>
@@ -47,8 +48,7 @@
             <div class="main">
                 <div class="main-box">
                     <div class="main-box-img">
-                        <img class="main-box-img-picture" src="./img/BED.png"
-                            alt="lozko do sypialni nevada">
+                        <img class="main-box-img-picture" src="./img/BED.png" alt="lozko do sypialni nevada">
                         <button class="main-box-img__btn">
                             <p>Zobacz więcej</p>
                         </button>
@@ -139,7 +139,7 @@
                 </div>
             </div>
         </section>
-        <section class="aboutUs">
+        <section class="aboutUs" id="about-company">
             <div class="wrapper">
                 <div class="page">
                     <h2 class="page__title">O firmie</h2>
@@ -192,10 +192,10 @@
                         " name="msg" id="msg" required></textarea>
                                 <p class="errorArea">Musisz wypełnić to pole!</p>
                             </div>
-                            <div class="contact__form-btnBox">
-                                <button>Wyślij</button>
-                            </div>
                         </form>
+                        <div class="contact__form-btnBox">
+                            <button>Wyślij</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -206,10 +206,11 @@
             <div class="box">
                 <div class="box-links">
                     <h3 class="box-links__title">Informacje</h3>
-                    <a class="box-links__style" href="#furniture">nasze meble</a>
+                    <a class="box-links__style" href="./subwebsites/offers.html">nasze meble</a>
                     <a class="box-links__style" href="#about-company">o firmie</a>
                     <a class="box-links__style" href="#contact">kontakt</a>
-                    <p>Zamawiaj równiez poprzez platformę <a target='_blank' class="box-links__allegro" href="https://allegro.pl/uzytkownik/JKG_Meble">Allegro</a>!</p>
+                    <p>Zamawiaj równiez poprzez platformę <a target='_blank' class="box-links__allegro"
+                            href="https://allegro.pl/uzytkownik/JKG_Meble">Allegro</a>!</p>
                 </div>
             </div>
             <div class="implementation">
@@ -217,10 +218,6 @@
             </div>
         </div>
     </footer>
-
-
-
     <script src="js/main.js"></script>
 </body>
-
 </html>
