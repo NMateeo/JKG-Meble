@@ -404,9 +404,15 @@ body {
   color: rgb(176, 73, 255);
 }
 
+.list {
+  margin: 4rem 1rem 1rem 1.5rem;
+  padding: 1rem 1rem;
+  border-radius: 5px;
+  font-size: 1.5rem;
+}
+
 .container {
   display: flex;
-  position: relative;
   justify-content: center;
   flex-wrap: wrap;
   align-items: center;
@@ -414,19 +420,104 @@ body {
 .container__box {
   margin: 2rem;
 }
-.container__box a-img {
+.container__box a {
+  color: #000;
+  text-decoration: none;
+}
+.container__box-img {
   height: 20rem;
   width: 100%;
 }
-.container__box a-things {
+.container__box-things {
   display: flex;
   justify-content: space-between;
   padding-top: 1.5rem;
 }
-.container__box a-things--text {
+.container__box-things--text {
   font-size: 2.2rem;
   font-family: sans-serif;
   font-weight: bold;
+}
+
+.arizona-container {
+  margin: 4rem 1.5rem 0 1.5rem;
+  font-weight: 400;
+  overflow: hidden;
+}
+.arizona-container__box {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+.arizona-container__box-img img {
+  height: 32rem;
+  width: 100%;
+  overflow: hidden;
+}
+.arizona-container__box-img-items img {
+  width: 30%;
+  height: 10rem;
+}
+.arizona-container__box-text {
+  margin: 5rem 2rem 0 2rem;
+}
+.arizona-container__box-text h2 {
+  font-size: 6.3rem;
+  text-align: center;
+}
+.arizona-container__box-text h3 {
+  margin: 1.2rem 0 2.2rem 0;
+  font-size: 3.3rem;
+}
+.arizona-container__box-text ul li {
+  margin: 2rem 0;
+  list-style: circle;
+  font-size: 1.8rem;
+}
+.arizona-container__box-text--price {
+  text-align: center;
+}
+.arizona-container__box-text--price .price {
+  font-family: sans-serif;
+  font-size: 3rem;
+}
+.arizona-container__box2 {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+.arizona-container__box2-description {
+  width: 100%;
+  margin: 2rem 0;
+}
+.arizona-container__box2-description h3 {
+  margin: 2rem 0;
+  text-align: center;
+  font-size: 3.3rem;
+}
+.arizona-container__box2-description p {
+  font-size: 1.8rem;
+  text-align: center;
+}
+.arizona-container__box2-textiles {
+  width: 100%;
+}
+.arizona-container__box2-textiles h3 {
+  text-align: center;
+  font-size: 3.3rem;
+}
+.arizona-container__box2-textiles--img {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
+  height: 22rem;
+  overflow: hidden;
+}
+.arizona-container__box2-textiles--img img {
+  background-position: center;
+  background-size: cover;
+  height: 100%;
 }
 
 @media (min-width: 768px) {
@@ -496,6 +587,59 @@ body {
   .navbar-desktop .animation:hover::before,
   .navbar-desktop .animation:hover::after {
     width: 50%;
+  }
+}
+@media (min-width: 768px) and (min-width: 862px) {
+  .arizona-container__box-text {
+    margin: 5rem 2rem 0 2rem;
+  }
+  .arizona-container__box-text h2 {
+    font-size: 6.3rem;
+    text-align: left;
+    letter-spacing: 0.2rem;
+  }
+  .arizona-container__box-text--price {
+    text-align: left;
+  }
+  .arizona-container__box-text h3 {
+    margin: 1.2rem 0 2.2rem 0;
+    font-size: 3.3rem;
+  }
+  .arizona-container__box-text ul li {
+    margin: 2rem 0;
+    list-style: circle;
+    font-size: 1.8rem;
+  }
+  .arizona-container__box2 {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+    flex-wrap: nowrap;
+    margin: 10rem;
+  }
+  .arizona-container__box2-description {
+    display: flex;
+    flex-direction: column;
+    height: 30rem;
+    background-color: #f6f6f6;
+    border-radius: 10px;
+    box-shadow: 2px 2px 3px rgba(43, 43, 43, 0.3);
+  }
+  .arizona-container__box2-description h3 {
+    padding: 1rem;
+  }
+  .arizona-container__box2-description p {
+    padding: 0 2rem;
+  }
+  .arizona-container__box2-textiles {
+    background-color: #f6f6f6;
+    border-radius: 10px;
+    box-shadow: 2px 2px 3px rgba(43, 43, 43, 0.3);
+  }
+  .arizona-container__box2-textiles--img img {
+    position: absolute;
   }
 }
 @media (min-width: 1000px) {
@@ -654,7 +798,6 @@ body {
   }
   .container__box-img {
     height: 26rem;
-    width: 100%;
     transition: transform 0.3s;
   }
   .container__box-img:hover {
@@ -662,5 +805,14 @@ body {
   }
   .container__box-things--text {
     font-size: 2.4rem;
+  }
+  .arizona-container__box-img img {
+    height: 42rem;
+    width: 100%;
+    overflow: hidden;
+  }
+  .arizona-container__box-img-items img {
+    width: 25%;
+    height: 10rem;
   }
 }/*# sourceMappingURL=style.css.map */

@@ -1,12 +1,12 @@
 const navMobile = document.querySelector(".navbar-mobile")
 const navBtn = document.querySelector(".hamburger")
-const errorText = document.querySelector(".errorMail")
-const errorArea = document.querySelector(".errorArea")
-const email = document.querySelector(".text")
-const formBtn = document.querySelector(".contact__form-btnBox")
-const textarea = document.querySelector(".textarea")
 const footerYear = document.querySelector(".footeryear")
 const allLinks = document.querySelectorAll(".navbar-mobile__link")
+const beds = document.querySelectorAll(".beds")
+const kitchenCorners = document.querySelectorAll(".kitchenCorners")
+const corners = document.querySelectorAll(".corners")
+const pouffe = document.querySelector(".pouffe")
+const list = document.querySelector(".list")
 
 const checkTextarea = () => {
 	if (textarea.value === "") {
@@ -40,5 +40,45 @@ const handleCurrentYear = () => {
 	footerYear.innerText = year
 }
 
+const furnituresList = () => {
+	if (list.value === "bed") {
+		beds.forEach(bed => (bed.style.display = "block"))
+		kitchenCorners.forEach(
+			kitchenCorner => (kitchenCorner.style.display = "none")
+		)
+		corners.forEach(corner => (corner.style.display = "none"))
+		pouffe.style.display = "none"
+	} else if (list.value === "kitchen-corner") {
+		kitchenCorners.forEach(
+			kitchenCorner => (kitchenCorner.style.display = "block")
+		)
+		beds.forEach(bed => (bed.style.display = "none"))
+		corners.forEach(corner => (corner.style.display = "none"))
+		pouffe.style.display = "none"
+	} else if (list.value === "corner") {
+		corners.forEach(corner => (corner.style.display = "block"))
+		kitchenCorners.forEach(
+			kitchenCorner => (kitchenCorner.style.display = "none")
+		)
+		beds.forEach(bed => (bed.style.display = "none"))
+		pouffe.style.display = "none"
+	} else if (list.value === "pouffe") {
+		kitchenCorners.forEach(
+			kitchenCorner => (kitchenCorner.style.display = "none")
+		)
+		beds.forEach(bed => (bed.style.display = "none"))
+		corners.forEach(corner => (corner.style.display = "none"))
+		pouffe.style.display = "block"
+	} else if (list.value === "all") {
+		kitchenCorners.forEach(
+			kitchenCorner => (kitchenCorner.style.display = "block")
+		)
+		beds.forEach(bed => (bed.style.display = "block"))
+		corners.forEach(corner => (corner.style.display = "block"))
+		pouffe.style.display = "block"
+	}
+}
+
 navBtn.addEventListener("click", handleNav)
 handleCurrentYear()
+list.addEventListener("change", furnituresList)

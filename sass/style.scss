@@ -95,7 +95,6 @@ body {
 			text-transform: uppercase;
 			text-decoration: none;
 			transition: color 0.3s;
-
 		}
 	}
 }
@@ -389,7 +388,7 @@ body {
 	}
 }
 
-// FOOTER 
+// FOOTER
 
 .footer {
 	margin-top: 5rem;
@@ -449,10 +448,10 @@ body {
 	background-color: #f6f6f6;
 	color: $darker;
 	letter-spacing: 1px;
-	
+
 	&::before {
 		position: absolute;
-		content: '';
+		content: "";
 		background-color: black;
 		top: 0;
 		left: 0;
@@ -465,46 +464,148 @@ body {
 .madeby {
 	font-weight: bold;
 	color: rgb(176, 73, 255);
-
 }
-
-
-
 
 ///// OFFERS /////
 /// CONTAINER ///
 
+.list {
+	margin: 4rem 1rem 1rem 1.5rem;
+	padding: 1rem 1rem;
+	border-radius: 5px;
+	font-size: 1.5rem;
+}
+
 .container {
 	display: flex;
-	position: relative;
 	justify-content: center;
 	flex-wrap: wrap;
 	align-items: center;
 
 	&__box {
 		margin: 2rem;
-
 		a {
-			&-img {
-				height: 20rem;
-				width: 100%;
+			color: #000;
+			text-decoration: none;
+		}
+
+		&-img {
+			height: 20rem;
+			width: 100%;
+		}
+
+		&-things {
+			display: flex;
+			justify-content: space-between;
+			padding-top: 1.5rem;
+			&--text {
+				font-size: 2.2rem;
+				font-family: sans-serif;
+				font-weight: bold;
 			}
-	
-			&-things {
-				display: flex;
-				justify-content: space-between;
-				padding-top: 1.5rem;
-				&--text {
-					font-size: 2.2rem;
-					font-family: sans-serif;
-					font-weight: bold;
+		}
+	}
+}
+
+//ARIZONA
+.arizona-container {
+	margin: 4rem 1.5rem 0 1.5rem;
+	font-weight: 400;
+	overflow: hidden;
+	&__box {
+		display: flex;
+		justify-content: space-evenly;
+		align-items: flex-start;
+		flex-wrap: wrap;
+
+		&-img {
+			img {
+				height: 32rem;
+				width: 100%;
+				overflow: hidden;
+			}
+			&-items {
+				img {
+					width: 30%;
+					height: 10rem;
 				}
 			}
 		}
 
+		&-text {
+			margin: 5rem 2rem 0 2rem;
+			h2 {
+				font-size: 6.3rem;
+				text-align: center;
+			}
+			h3 {
+				margin: 1.2rem 0 2.2rem 0;
+				font-size: 3.3rem;
+			}
+			ul {
+				li {
+					margin: 2rem 0;
+					list-style: circle;
+					font-size: 1.8rem;
+				}
+			}
+			
+			&--price {
+				text-align: center;
+				
+				.price {
+					font-family: sans-serif;
+					font-size: 3rem;
+				}
+			}
+		}
+	}
+
+	&__box2 {
+		display: flex;
+		justify-content: space-evenly;
+		flex-wrap: wrap;
+		
+		&-description {
+			width: 100%;
+			margin: 2rem 0;
+
+			h3 {
+				margin: 2rem 0;
+				text-align: center;
+				font-size: 3.3rem;
+			}
+
+			p {
+				font-size: 1.8rem;
+				text-align: center;
+			}
+		}
+
+		&-textiles {
+			width: 100%;
+
+			h3 {
+				text-align: center;
+				font-size: 3.3rem;
+			}
+
+			&--img {
+				display: flex;
+				justify-content: center;
+				margin: 2rem 0;
+				height: 22rem;
+				overflow: hidden;
+
+				img {
+					background-position: center;
+					background-size: cover;
+					height: 100%;
+				}
+			}
+		}
 	}
 }
-
 
 // MEDIA 768//
 
@@ -588,8 +689,82 @@ body {
 			width: 50%;
 		}
 	}
-}
+	
+@media (min-width: 862px) {
+	
+		//ARIZONA
+		.arizona-container {
+			&__box {
+				&-text {
+					margin: 5rem 2rem 0 2rem;
+					h2 {
+						font-size: 6.3rem;
+						text-align: left;
+						letter-spacing: 0.2rem;
+					}
 
+					&--price {
+						text-align: left;
+					}
+					h3 {
+						margin: 1.2rem 0 2.2rem 0;
+						font-size: 3.3rem;
+					}
+					ul {
+						li {
+							margin: 2rem 0;
+							list-style: circle;
+							font-size: 1.8rem;
+						}
+					}
+				}
+			}
+
+			&__box2 {
+				position: relative;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				gap: 5rem;
+				flex-wrap: nowrap;
+				margin: 10rem;
+
+				&-description {
+					display: flex;
+					flex-direction: column;
+					height: 30rem;
+					background-color: #f6f6f6;
+					border-radius: 10px;
+					box-shadow: 2px 2px 3px rgba(43, 43, 43, 0.3);
+
+					h3 {
+						padding: 1rem;
+					}
+
+					p {
+						padding: 0 2rem;
+					}
+				}
+
+				&-textiles {
+					background-color: #f6f6f6;
+					border-radius: 10px;
+					box-shadow: 2px 2px 3px rgba(43, 43, 43, 0.3);
+
+					h3 {
+					}
+
+					&--img {
+
+						img {
+							position: absolute;
+						}
+					}
+				}
+			}
+		}
+	}
+}
 
 @media (min-width: 1000px) {
 	.main {
@@ -760,25 +935,42 @@ body {
 	///// OFFERS /////
 	/// CONTAINER ///
 
-	.container {	
+	.container {
 		&__box {
 			margin: 2rem 4rem;
 			cursor: pointer;
-	
+
 			&-img {
 				height: 26rem;
-				width: 100%;
-				transition: transform .3s;
-				
+				transition: transform 0.3s;
 
 				&:hover {
-					transform: scale(.95);
+					transform: scale(0.95);
 				}
 			}
-	
+
 			&-things {
 				&--text {
 					font-size: 2.4rem;
+				}
+			}
+		}
+	}
+
+	//ARIZONA
+	.arizona-container {
+		&__box {
+			&-img {
+				img {
+					height: 42rem;
+					width: 100%;
+					overflow: hidden;
+				}
+				&-items {
+					img {
+						width: 25%;
+						height: 10rem;
+					}
 				}
 			}
 		}
