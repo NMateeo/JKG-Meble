@@ -484,40 +484,105 @@ body {
 }
 .arizona-container__box2 {
   display: flex;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  margin-top: 10rem;
 }
 .arizona-container__box2-description {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   width: 100%;
-  margin: 2rem 0;
 }
-.arizona-container__box2-description h3 {
-  margin: 2rem 0;
+.arizona-container__box2-description-title {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
+  width: 90%;
+}
+.arizona-container__box2-description-title::after {
+  position: absolute;
+  content: "";
+  top: 50%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background-color: rgb(255, 164, 37);
+  z-index: 1;
+}
+.arizona-container__box2-description-title h3 {
+  position: relative;
   font-size: 3.3rem;
+  background-color: white;
+  padding: 0 1rem 0 1rem;
+  z-index: 2;
 }
 .arizona-container__box2-description p {
+  margin-top: 2rem;
   font-size: 1.8rem;
   text-align: center;
 }
 .arizona-container__box2-textiles {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
   width: 100%;
 }
-.arizona-container__box2-textiles h3 {
-  text-align: center;
-  font-size: 3.3rem;
+.arizona-container__box2-textiles-btns {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 75%;
+  margin-top: 2rem;
 }
-.arizona-container__box2-textiles--img {
+.arizona-container__box2-textiles-btns--btn {
+  padding: 1.2rem 0;
+  width: 15rem;
+  background: none;
+  border: 1.5px solid rgb(30, 30, 30);
+  box-shadow: 2px 1px 3px rgba(43, 43, 43, 0.3);
+  letter-spacing: 0.15rem;
+  font-size: 1.4rem;
+  transition: border-radius 0.3s, transform 0.3s, border 0.3s;
+  cursor: pointer;
+}
+.arizona-container__box2-textiles-btns--btn:hover {
+  border-radius: 5px;
+  transform: scale(0.95);
+  border: 1.5px solid rgb(255, 164, 37);
+}
+.arizona-container__box2-textiles-title {
+  position: relative;
   display: flex;
   justify-content: center;
-  margin: 2rem 0;
-  height: 22rem;
-  overflow: hidden;
+  align-items: center;
+  text-align: center;
+  width: 90%;
 }
-.arizona-container__box2-textiles--img img {
-  background-position: center;
-  background-size: cover;
-  height: 100%;
+.arizona-container__box2-textiles-title::after {
+  position: absolute;
+  content: "";
+  top: 50%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background-color: rgb(255, 164, 37);
+  z-index: 1;
+}
+.arizona-container__box2-textiles-title h3 {
+  padding: 0 1rem 0 1rem;
+  text-align: center;
+  font-size: 3.3rem;
+  background-color: #fff;
+  z-index: 2;
 }
 
 @media (min-width: 768px) {
@@ -576,7 +641,7 @@ body {
     position: absolute;
     width: 0;
     bottom: 0;
-    border-bottom: 2px solid white;
+    border-bottom: 2px solid rgb(255, 164, 37);
   }
   .navbar-desktop .animation::before {
     right: 50%;
@@ -611,35 +676,24 @@ body {
     font-size: 1.8rem;
   }
   .arizona-container__box2 {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 5rem;
-    flex-wrap: nowrap;
-    margin: 10rem;
+    flex-direction: row;
   }
   .arizona-container__box2-description {
-    display: flex;
-    flex-direction: column;
-    height: 30rem;
-    background-color: #f6f6f6;
-    border-radius: 10px;
-    box-shadow: 2px 2px 3px rgba(43, 43, 43, 0.3);
+    width: 40%;
   }
-  .arizona-container__box2-description h3 {
-    padding: 1rem;
+  .arizona-container__box2-description::after {
+    right: 3rem;
+    left: 3rem;
   }
   .arizona-container__box2-description p {
     padding: 0 2rem;
   }
   .arizona-container__box2-textiles {
-    background-color: #f6f6f6;
-    border-radius: 10px;
-    box-shadow: 2px 2px 3px rgba(43, 43, 43, 0.3);
+    width: 40%;
   }
-  .arizona-container__box2-textiles--img img {
-    position: absolute;
+  .arizona-container__box2-textiles::after {
+    left: 3rem;
+    right: 3rem;
   }
 }
 @media (min-width: 1000px) {

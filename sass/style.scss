@@ -433,7 +433,7 @@ body {
 		}
 
 		&__allegro {
-			color: rgb(255, 164, 37);
+			color: $mainColor;
 		}
 	}
 }
@@ -549,10 +549,10 @@ body {
 					font-size: 1.8rem;
 				}
 			}
-			
+
 			&--price {
 				text-align: center;
-				
+
 				.price {
 					font-family: sans-serif;
 					font-size: 3rem;
@@ -563,44 +563,111 @@ body {
 
 	&__box2 {
 		display: flex;
-		justify-content: space-evenly;
-		flex-wrap: wrap;
-		
+		justify-content: center;
+		align-items: flex-start;
+		flex-direction: column;
+		margin-top: 10rem;
 		&-description {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
 			width: 100%;
-			margin: 2rem 0;
 
-			h3 {
-				margin: 2rem 0;
+			&-title {
+				position: relative;
+				display: flex;
+				justify-content: center;
+				align-items: center;
 				text-align: center;
-				font-size: 3.3rem;
+				width: 90%;
+				&::after {
+					position: absolute;
+					content: "";
+					top: 50%;
+					bottom: 0;
+					left: 0;
+					right: 0;
+					height: 3px;
+					background-color: $mainColor;
+					z-index: 1;
+				}
+				h3 {
+					position: relative;
+					font-size: 3.3rem;
+					background-color: $white;
+					padding: 0 1rem 0 1rem;
+					z-index: 2;
+				}
 			}
 
 			p {
+				margin-top: 2rem;
 				font-size: 1.8rem;
 				text-align: center;
 			}
 		}
 
 		&-textiles {
+			position: relative;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex-wrap: wrap;
 			width: 100%;
 
-			h3 {
-				text-align: center;
-				font-size: 3.3rem;
+			&-btns {
+				display: flex;
+				justify-content: space-around;
+				align-items: center;
+				width: 75%;
+				margin-top: 2rem;
+
+				&--btn {
+					padding: 1.2rem 0;
+					width: 15rem;
+					background: none;
+					border: 1.5px solid $darker;
+					box-shadow: 2px 1px 3px rgba(43, 43, 43, 0.3);
+					letter-spacing: .15rem;
+					font-size: 1.4rem;
+					transition: border-radius .3s, transform .3s, border .3s;
+					cursor: pointer;
+
+					&:hover {
+						border-radius: 5px;
+						transform: scale(.95);
+						border: 1.5px solid $mainColor;
+					}
+
+
+				}
 			}
 
-			&--img {
+			&-title {
+				position: relative;
 				display: flex;
 				justify-content: center;
-				margin: 2rem 0;
-				height: 22rem;
-				overflow: hidden;
-
-				img {
-					background-position: center;
-					background-size: cover;
-					height: 100%;
+				align-items: center;
+				text-align: center;
+				width: 90%;
+				&::after {
+					position: absolute;
+					content: "";
+					top: 50%;
+					bottom: 0;
+					left: 0;
+					right: 0;
+					height: 3px;
+					background-color: $mainColor;
+					z-index: 1;
+				}
+				h3 {
+					padding: 0 1rem 0 1rem;
+					text-align: center;
+					font-size: 3.3rem;
+					background-color: #fff;
+					z-index: 2;
 				}
 			}
 		}
@@ -674,7 +741,7 @@ body {
 			position: absolute;
 			width: 0;
 			bottom: 0;
-			border-bottom: 2px solid $white;
+			border-bottom: 2px solid $mainColor;
 		}
 		.animation::before {
 			right: 50%;
@@ -689,9 +756,8 @@ body {
 			width: 50%;
 		}
 	}
-	
-@media (min-width: 862px) {
-	
+
+	@media (min-width: 862px) {
 		//ARIZONA
 		.arizona-container {
 			&__box {
@@ -721,24 +787,15 @@ body {
 			}
 
 			&__box2 {
-				position: relative;
-				display: flex;
-				justify-content: center;
-				align-items: center;
-				gap: 5rem;
-				flex-wrap: nowrap;
-				margin: 10rem;
-
+				flex-direction: row;
 				&-description {
-					display: flex;
-					flex-direction: column;
-					height: 30rem;
-					background-color: #f6f6f6;
-					border-radius: 10px;
-					box-shadow: 2px 2px 3px rgba(43, 43, 43, 0.3);
+					width: 40%;
 
+					&::after {
+						right: 3rem;
+						left: 3rem;
+					}
 					h3 {
-						padding: 1rem;
 					}
 
 					p {
@@ -747,18 +804,13 @@ body {
 				}
 
 				&-textiles {
-					background-color: #f6f6f6;
-					border-radius: 10px;
-					box-shadow: 2px 2px 3px rgba(43, 43, 43, 0.3);
+					width: 40%;
 
-					h3 {
+					&::after {
+						left: 3rem;
+						right: 3rem;
 					}
-
-					&--img {
-
-						img {
-							position: absolute;
-						}
+					h3 {
 					}
 				}
 			}
