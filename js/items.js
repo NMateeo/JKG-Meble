@@ -7,6 +7,9 @@ const kitchenCorners = document.querySelectorAll(".kitchenCorners")
 const corners = document.querySelectorAll(".corners")
 const pouffe = document.querySelector(".pouffe")
 const list = document.querySelector(".list")
+const btnMon = document.querySelector(".monolith")
+const monolithImg = document.querySelector(".button-monolith")
+const btnX = document.querySelector(".button-monolith__icon")
 
 const checkTextarea = () => {
 	if (textarea.value === "") {
@@ -35,6 +38,14 @@ const handleNav = () => {
 	)
 }
 
+const showPicture = () => {
+	monolithImg.style.display = "flex"
+}
+
+const removePicture = () => {
+	monolithImg.style.display = "none"
+}
+
 const handleCurrentYear = () => {
 	const year = new Date().getFullYear()
 	footerYear.innerText = year
@@ -42,3 +53,5 @@ const handleCurrentYear = () => {
 
 navBtn.addEventListener("click", handleNav)
 handleCurrentYear()
+btnMon.addEventListener("click", showPicture)
+btnX.addEventListener("click", removePicture)

@@ -463,7 +463,12 @@ body {
 
 .madeby {
 	font-weight: bold;
-	color: rgb(176, 73, 255);
+	transition: color .2s;
+	cursor: pointer;
+	
+	&:hover {
+		color: rgb(176, 73, 255);
+	}
 }
 
 ///// OFFERS /////
@@ -602,7 +607,7 @@ body {
 			}
 
 			p {
-				margin-top: 2rem;
+				margin: 3rem 0;
 				font-size: 1.8rem;
 				text-align: center;
 			}
@@ -621,10 +626,12 @@ body {
 				justify-content: space-around;
 				align-items: center;
 				width: 75%;
-				margin-top: 2rem;
+				margin-top: 3rem;
+				
 
 				&--btn {
 					padding: 1.2rem 0;
+					margin: 0 .5rem 0 .5rem;
 					width: 15rem;
 					background: none;
 					border: 1.5px solid $darker;
@@ -671,6 +678,87 @@ body {
 				}
 			}
 		}
+	}
+}
+
+
+// ABOUT_US //
+
+.company_container {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+
+	&__text {
+		margin: 3rem 2rem;
+		text-align: center;
+		font-size: 1.8rem;
+	}
+
+	&__square {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		width: 34rem;
+		height: 23rem;
+		margin: 2rem;
+		border-radius: 18px;
+		border-top-left-radius: 0px;
+		border-bottom-right-radius: 0px;
+		box-shadow: 0 0 6px 2px rgba(43, 43, 43, 0.3);
+		transition: transform .3s;
+
+		&:hover {
+			transform: scale(1.05);
+		}
+
+		&--img {
+			position: absolute;
+			top: 3rem;
+			height: 3.5rem;
+		}
+
+		&--text {
+			position: absolute;
+			text-align: center;
+			top: 10rem;
+			margin: 0 1rem;
+			font-size: 1.8rem;
+		}
+	}
+}
+
+.button-monolith {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: rgba(0, 0, 0, 0.85);
+	z-index: 1000;
+	overflow: hidden;
+	display: none;
+	
+	&__img {
+		background-size: cover;
+		background-position: center;
+		width: 100%;
+
+	}
+
+	&__icon {
+		position: absolute;
+		top: 1rem;
+		right: 1rem;
+		height: 4rem;
 	}
 }
 
@@ -756,65 +844,69 @@ body {
 			width: 50%;
 		}
 	}
-
-	@media (min-width: 862px) {
-		//ARIZONA
-		.arizona-container {
-			&__box {
-				&-text {
-					margin: 5rem 2rem 0 2rem;
-					h2 {
-						font-size: 6.3rem;
-						text-align: left;
-						letter-spacing: 0.2rem;
-					}
-
-					&--price {
-						text-align: left;
-					}
-					h3 {
-						margin: 1.2rem 0 2.2rem 0;
-						font-size: 3.3rem;
-					}
-					ul {
-						li {
-							margin: 2rem 0;
-							list-style: circle;
-							font-size: 1.8rem;
-						}
-					}
-				}
-			}
-
-			&__box2 {
-				flex-direction: row;
-				&-description {
-					width: 40%;
-
-					&::after {
-						right: 3rem;
-						left: 3rem;
-					}
-					h3 {
-					}
-
-					p {
-						padding: 0 2rem;
-					}
+}
+@media (min-width: 862px) {
+	//ARIZONA
+	.arizona-container {
+		&__box {
+			&-text {
+				margin: 5rem 2rem 0 2rem;
+				h2 {
+					font-size: 6.3rem;
+					text-align: left;
+					letter-spacing: 0.2rem;
 				}
 
-				&-textiles {
-					width: 40%;
-
-					&::after {
-						left: 3rem;
-						right: 3rem;
-					}
-					h3 {
+				&--price {
+					text-align: left;
+				}
+				h3 {
+					margin: 1.2rem 0 2.2rem 0;
+					font-size: 3.3rem;
+				}
+				ul {
+					li {
+						margin: 2rem 0;
+						list-style: circle;
+						font-size: 1.8rem;
 					}
 				}
 			}
 		}
+
+		&__box2 {
+			flex-direction: row;
+			&-description {
+				width: 40%;
+
+				&::after {
+					right: 3rem;
+					left: 3rem;
+				}
+				// h3 {
+				// }
+
+				p {
+					padding: 0 2rem;
+				}
+			}
+
+			&-textiles {
+				width: 40%;
+
+				&::after {
+					left: 3rem;
+					right: 3rem;
+				}
+				// h3 {
+				// }
+			}
+		}
+	}
+
+	.company_container {
+		flex-wrap: wrap;
+		flex-direction: row;
 	}
 }
 
@@ -1027,4 +1119,44 @@ body {
 			}
 		}
 	}
+
+	// BTN 
+		
+		.button-monolith {
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			background-color: rgba(0, 0, 0, 0.85);
+			z-index: 1000;
+			overflow: hidden;
+			display: none;
+			min-height: 10%;
+			
+			&__img {
+				background-size: cover;
+				background-position: center;
+				width: 100rem;
+				height: 70rem;
+				margin: 2rem;
+		
+			}
+		
+			&__icon {
+				position: absolute;
+				top: 5%;
+				right: 5%;
+				height: 7rem;
+				cursor: pointer;
+				transition: transform .2s;
+	
+				&:hover {
+					transform: scale(1.1);
+				}
+			}
+		}
 }
