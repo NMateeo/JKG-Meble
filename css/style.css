@@ -22,6 +22,11 @@ body {
   width: 100%;
 }
 
+.zoom-img {
+  cursor: zoom-in;
+  transform: scale(2);
+}
+
 .logo {
   position: relative;
   background-color: rgb(30, 30, 30);
@@ -453,15 +458,26 @@ body {
   justify-content: space-evenly;
   align-items: flex-start;
   flex-wrap: wrap;
+  overflow: hidden;
+}
+.arizona-container__box-img {
+  overflow: hidden;
 }
 .arizona-container__box-img img {
   height: 32rem;
   width: 100%;
-  overflow: hidden;
+}
+.arizona-container__box-img-items {
+  margin-top: 1rem;
+  cursor: pointer;
 }
 .arizona-container__box-img-items img {
   width: 30%;
   height: 10rem;
+  transition: scale 0.2s;
+}
+.arizona-container__box-img-items img:hover {
+  scale: 0.9;
 }
 .arizona-container__box-text {
   margin: 5rem 2rem 0 2rem;
@@ -478,6 +494,7 @@ body {
   margin: 2rem 0;
   list-style: circle;
   font-size: 1.8rem;
+  font-family: sans-serif;
 }
 .arizona-container__box-text--price {
   text-align: center;
@@ -633,7 +650,7 @@ body {
   font-size: 1.8rem;
 }
 
-.button-monolith {
+.buttons {
   position: absolute;
   top: 0;
   left: 0;
@@ -647,12 +664,12 @@ body {
   overflow: hidden;
   display: none;
 }
-.button-monolith__img {
+.buttons__img {
   background-size: cover;
   background-position: center;
   width: 100%;
 }
-.button-monolith__icon {
+.buttons__icon {
   position: absolute;
   top: 1rem;
   right: 1rem;
@@ -729,6 +746,12 @@ body {
   }
 }
 @media (min-width: 862px) {
+  .arizona-container__box-img {
+    width: 60rem;
+  }
+  .arizona-container__box-img-items {
+    width: 50rem;
+  }
   .arizona-container__box-text {
     margin: 5rem 2rem 0 2rem;
   }
@@ -761,6 +784,10 @@ body {
   }
   .arizona-container__box2-description p {
     padding: 0 2rem;
+  }
+  .arizona-container__box2-description span {
+    font-weight: bold;
+    letter-spacing: 0.1rem;
   }
   .arizona-container__box2-textiles {
     width: 40%;
@@ -947,12 +974,7 @@ body {
     width: 25%;
     height: 10rem;
   }
-  .button-monolith {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+  .buttons {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -960,16 +982,15 @@ body {
     z-index: 1000;
     overflow: hidden;
     display: none;
-    min-height: 10%;
   }
-  .button-monolith__img {
+  .buttons__img {
     background-size: cover;
     background-position: center;
     width: 100rem;
     height: 70rem;
     margin: 2rem;
   }
-  .button-monolith__icon {
+  .buttons__icon {
     position: absolute;
     top: 5%;
     right: 5%;
@@ -977,7 +998,7 @@ body {
     cursor: pointer;
     transition: transform 0.2s;
   }
-  .button-monolith__icon:hover {
+  .buttons__icon:hover {
     transform: scale(1.1);
   }
 }/*# sourceMappingURL=style.css.map */

@@ -8,8 +8,19 @@ const corners = document.querySelectorAll(".corners")
 const pouffe = document.querySelector(".pouffe")
 const list = document.querySelector(".list")
 const btnMon = document.querySelector(".monolith")
-const monolithImg = document.querySelector(".button-monolith")
-const btnX = document.querySelector(".button-monolith__icon")
+const btnInari = document.querySelector(".inari")
+const btnSoft = document.querySelector(".soft")
+const btnSoftTwo = document.querySelector(".softTwo")
+const imgButtons = document.querySelector(".buttons")
+const btnX = document.querySelector(".buttons__icon")
+const monoImg = document.querySelector(".monolitImg")
+const inariImg = document.querySelector(".inariImg")
+const softImg = document.querySelector(".softImg")
+const soft2Img = document.querySelector(".soft2Img")
+const html = document.querySelector("html")
+const itemPhoto = document.querySelector(".photo")
+const imgContainer = document.querySelector(".arizona-container__box-img-items")
+const allItemsImages = imgContainer.querySelectorAll("img")
 
 const checkTextarea = () => {
 	if (textarea.value === "") {
@@ -38,20 +49,83 @@ const handleNav = () => {
 	)
 }
 
-const showPicture = () => {
-	monolithImg.style.display = "flex"
+const zoomImg = e => {
+	const x = e.clientX
+	const y = e.clientY
+
+	const imgX = itemPhoto.offsetLeft
+	const imgY = itemPhoto.offsetTop
+
+	const newX = (imgX - x) * -1
+	const newY = (imgY - y) * -1
+
+	itemPhoto.style.transformOrigin = `${newX}px ${newY}px`
+
+	itemPhoto.classList.add("zoom-img")
+}
+
+const resetImg = () => {
+	itemPhoto.classList.remove("zoom-img")
+}
+
+const showMon = () => {
+	imgButtons.style.display = "flex"
+	monoImg.style.display = "block"
+	inariImg.style.display = "none"
+	softImg.style.display = "none"
+	soft2Img.style.display = "none"
+	document.getElementsByTagName("body")[0].style.overflow = "hidden"
+	html.style.scrollBehavior = "auto"
+}
+const showInari = () => {
+	imgButtons.style.display = "flex"
+	monoImg.style.display = "none"
+	inariImg.style.display = "block"
+	softImg.style.display = "none"
+	soft2Img.style.display = "none"
+	document.getElementsByTagName("body")[0].style.overflow = "hidden"
+	html.style.scrollBehavior = "auto"
+}
+const showSoft = () => {
+	imgButtons.style.display = "flex"
+	monoImg.style.display = "none"
+	inariImg.style.display = "none"
+	softImg.style.display = "block"
+	soft2Img.style.display = "none"
+	document.getElementsByTagName("body")[0].style.overflow = "hidden"
+	html.style.scrollBehavior = "auto"
+}
+const showSoft2 = () => {
+	imgButtons.style.display = "flex"
+	monoImg.style.display = "none"
+	inariImg.style.display = "none"
+	softImg.style.display = "none"
+	soft2Img.style.display = "block"
+	document.getElementsByTagName("body")[0].style.overflow = "hidden"
+	html.style.scrollBehavior = "auto"
 }
 
 const removePicture = () => {
-	monolithImg.style.display = "none"
+	imgButtons.style.display = "none"
+	document.getElementsByTagName("body")[0].style.overflow = "visible"
 }
-
 const handleCurrentYear = () => {
 	const year = new Date().getFullYear()
 	footerYear.innerText = year
 }
 
+allItemsImages.forEach(img =>
+	img.addEventListener("click", () => {
+		itemPhoto.src = img.src
+	})
+)
+
 navBtn.addEventListener("click", handleNav)
 handleCurrentYear()
-btnMon.addEventListener("click", showPicture)
+btnMon.addEventListener("click", showMon)
+btnInari.addEventListener("click", showInari)
+btnSoft.addEventListener("click", showSoft)
+btnSoftTwo.addEventListener("click", showSoft2)
 btnX.addEventListener("click", removePicture)
+itemPhoto.addEventListener("mousemove", zoomImg)
+itemPhoto.addEventListener("mouseout", resetImg)
