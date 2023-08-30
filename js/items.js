@@ -19,8 +19,15 @@ const softImg = document.querySelector(".softImg")
 const soft2Img = document.querySelector(".soft2Img")
 const html = document.querySelector("html")
 const itemPhoto = document.querySelector(".photo")
-const imgContainer = document.querySelector(".arizona-container__box-img-items")
+const imgContainer = document.querySelector(
+	".arizona-container__box-img-items-slider"
+)
+const leftBtn = document.querySelector(".left")
+const rightBtn = document.querySelector(".right")
 const allItemsImages = imgContainer.querySelectorAll("img")
+const hideArrows = document.querySelectorAll(".hide")
+let transformNumber = 0
+let carouselWidth = 85
 
 const checkTextarea = () => {
 	if (textarea.value === "") {
@@ -120,7 +127,50 @@ allItemsImages.forEach(img =>
 	})
 )
 
+const handleCarousel = () => {
+	transformNumber++
+	changeImage()
+}
+
+const changeImage = () => {
+	if (window.matchMedia("(min-width: 529px)").matches) {
+		carouselWidth = 90
+		if (transformNumber === allItemsImages.length - 2) {
+			transformNumber = 0
+		} else if (transformNumber < 0) {
+			transformNumber = allItemsImages.length - 2
+		}
+
+		imgContainer.style.transform = `translateX(${
+			-transformNumber * carouselWidth
+		}px)`
+	} else if (window.matchMedia("(min-width: 360px)").matches) {
+		carouselWidth = 85
+		if (transformNumber === allItemsImages.length) {
+			transformNumber = 0
+		} else if (transformNumber < 0) {
+			transformNumber = allItemsImages.length - 2
+		}
+
+		imgContainer.style.transform = `translateX(${
+			-transformNumber * carouselWidth
+		}px)`
+	}
+}
+
+const sliderRight = () => {
+	transformNumber++
+	changeImage()
+}
+
+const sliderLeft = () => {
+	transformNumber--
+	changeImage()
+}
+
 navBtn.addEventListener("click", handleNav)
+rightBtn.addEventListener("click", sliderRight)
+leftBtn.addEventListener("click", sliderLeft)
 handleCurrentYear()
 btnMon.addEventListener("click", showMon)
 btnInari.addEventListener("click", showInari)
