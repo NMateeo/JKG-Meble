@@ -996,7 +996,7 @@ body {
 		display: flex;
 		flex-direction: row;
 		width: 100%;
-		height: 70vh;
+		
 
 		&-box {
 			width: 100%;
@@ -1025,7 +1025,7 @@ body {
 				}
 				&__btn {
 					position: absolute;
-					top: 28%;
+					top: 36%;
 					left: 50%;
 					transform: translate(-50%, -50%);
 					padding: 1rem 2rem;
@@ -1246,3 +1246,4 @@ body {
 		}
 	}
 }
+
